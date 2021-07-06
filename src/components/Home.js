@@ -14,7 +14,7 @@ export const Home = () => (
             <div>Visit Us at the Nashville North Location</div>
             <div>500 Puppy Way</div>
         </address>
-        <PropsAndState yourName={"Brenda"} />
+        <PropsAndState yourName={"Sam"} yourLastName={"Carbine"}/>
   <h2>Animals</h2>
         <article className="animals">
             <AnimalCard />
