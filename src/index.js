@@ -3,6 +3,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 import { BrowserRouter as Router } from "react-router-dom"
 import { Kennel } from "./components/Kennel.js"
+import { reportWebVitals } from "./reportWebVitals"
 import "./index.css"
 
 ReactDOM.render(
@@ -14,14 +15,7 @@ ReactDOM.render(
     document.getElementById("root")
 )
 
+reportWebVitals()
 
-// import React from "react"
-// import ReactDOM from "react-dom"
-// import { Kennel } from "./components/Kennel"
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Kennel />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
+
