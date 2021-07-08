@@ -1,9 +1,13 @@
 import React from "react";
 import { PropsAndState } from "./PropsAndState";
-import { AnimalCard } from "./animal/AnimalCard";
-import { CustomerCard } from "./customer/Customer";
-import { LocationCard } from "./location/Locations";
-import { EmployeeCard } from "./employee/Employee";
+import { AnimalProvider } from "./animal/AnimalProvider";
+import { CustomerProvider } from "./customer/CustomerProvider";
+import { LocationProvider } from "./location/LocationProvider";
+import { EmployeeProvider } from "./employee/EmployeeProvider";
+import { AnimalList } from "./animal/AnimalList";
+import { CustomerList } from "./customer/CustomerList";
+import { LocationList } from "./location/LocationList";
+import { EmployeeList } from "./employee/EmployeeList";
 
 export const Home = () => (
   <>
@@ -16,30 +20,23 @@ export const Home = () => (
     </address>
     <PropsAndState yourName={"Sam"} yourLastName={"Carbine"} />
     <h2>Animals</h2>
-    <article className="animals">
-      <AnimalCard />
-      <AnimalCard />
-      <AnimalCard />
-    </article>
+    <AnimalProvider>
+      <AnimalList />
+    </AnimalProvider>
 
     <h2>Customers</h2>
-    <article className="customers">
-      <CustomerCard />
-      <CustomerCard />
-      <CustomerCard />
-    </article>
+    <CustomerProvider>
+      <CustomerList />
+    </CustomerProvider>
 
     <h2>Locations</h2>
-    <article className="locations">
-      <LocationCard />
-      <LocationCard />
-      <LocationCard />
-    </article>
+    <LocationProvider>
+      <LocationList />
+    </LocationProvider>
+
     <h2>Employees</h2>
-    <article className="employees">
-      <EmployeeCard />
-      <EmployeeCard />
-      <EmployeeCard />
-    </article>
+    <EmployeeProvider>
+      <EmployeeList />
+    </EmployeeProvider>
   </>
 );
