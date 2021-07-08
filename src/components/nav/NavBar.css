@@ -7,4 +7,13 @@
 .navbar__item {
   flex-basis: 20%;
   list-style-type: none;
+  border: solid grey .1rem;
+  text-align: center;
+  padding:.25rem;
 }
+.navbar__item:hover {
+ background-color: rgba(165, 54, 161, 0.68);
+ color: white;
+}
+
+
