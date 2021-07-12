@@ -20,8 +20,13 @@ export const Home = () => (
     </address>
     <PropsAndState yourName={"Sam"} yourLastName={"Carbine"} />
     <h2>Animals</h2>
+
     <AnimalProvider>
+      <CustomerProvider>
+        <LocationProvider>
       <AnimalList />
+      </LocationProvider>
+      </CustomerProvider>
     </AnimalProvider>
 
     <h2>Customers</h2>

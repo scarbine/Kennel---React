@@ -8,7 +8,7 @@ export const AnimalProvider = (props) => {
     const [animals, setAnimals] = useState([])
 
     const getAnimals = () => {
-        return fetch("http://localhost:8088/animals?_expand=locations")
+        return fetch("http://localhost:8088/animals")
         .then(res => res.json())
         .then(setAnimals)
     }
@@ -24,6 +24,11 @@ export const AnimalProvider = (props) => {
         .then(getAnimals)
     }
 
+    const getAnimalById = (id) => {
+        return fetch(`http://localhost:8088/animals/${id}?_expand=location&_expand=customer`)
+            .then(res => res.json())
+    }
+
     /*
         You return a context provider which has the
         `animals` state, `getAnimals` function,
@@ -32,7 +37,7 @@ export const AnimalProvider = (props) => {
     */
     return (
         <AnimalContext.Provider value={{
-            animals, getAnimals, addAnimal
+            animals, getAnimals, addAnimal, getAnimalById
         }}>
             {props.children}
         </AnimalContext.Provider>
