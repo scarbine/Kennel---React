@@ -9,11 +9,11 @@ import { AnimalList } from "./animal/AnimalList";
 import { EmployeeList } from "./employee/EmployeeList";
 import { LocationList } from "./location/LocationList";
 import { CustomerList } from "./customer/CustomerList";
-// import { AnimalForm } from "./animal/AnimalForm";
 import { AnimalDetail } from "./animal/AnimalDetail";
 import { EmployeeDetail } from "./employee/EmployeeDetail";
-import { LocationDetail } from "./location/LocationDetail"
-
+import { LocationDetail } from "./location/LocationDetail";
+import { AnimalForm } from "./animal/AnimalForm";
+import { AnimalSearch } from "./animal/AnimalSearch";
 
 export const ApplicationViews = () => {
   return (
@@ -33,12 +33,25 @@ export const ApplicationViews = () => {
       <AnimalProvider>
         <CustomerProvider>
           <LocationProvider>
-          <Route exact path="/animals">
-          <AnimalList />
-        </Route>
+            <Route exact path="/animals">
+              <AnimalSearch />
+              <AnimalList />
+            </Route>
           </LocationProvider>
         </CustomerProvider>
       </AnimalProvider>
+
+      <AnimalProvider>
+        <CustomerProvider>
+          <LocationProvider>
+            <Route exact path="/animals/edit/:animalId(\d+)">
+              <AnimalForm />
+            </Route>
+          </LocationProvider>
+        </CustomerProvider>
+      </AnimalProvider>
+
+   
 
       <CustomerProvider>
         <Route path="/customers">
@@ -46,11 +59,11 @@ export const ApplicationViews = () => {
         </Route>
       </CustomerProvider>
 
-    <EmployeeProvider>
-      <Route exact path="/employees/detail/:employeeId(\d+)">
-        <EmployeeDetail />
-      </Route>
-    </EmployeeProvider>
+      <EmployeeProvider>
+        <Route exact path="/employees/detail/:employeeId(\d+)">
+          <EmployeeDetail />
+        </Route>
+      </EmployeeProvider>
 
       <EmployeeProvider>
         <Route exact path="/employees">
@@ -58,11 +71,11 @@ export const ApplicationViews = () => {
         </Route>
       </EmployeeProvider>
 
-    <LocationProvider>
-      <Route exact path="/locations/detail/:locationId(\d+)">
-        <LocationDetail />
-      </Route>
-    </LocationProvider>
+      <LocationProvider>
+        <Route exact path="/locations/detail/:locationId(\d+)">
+          <LocationDetail />
+        </Route>
+      </LocationProvider>
 
       <LocationProvider>
         <Route exact path="/locations">
